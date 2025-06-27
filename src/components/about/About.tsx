@@ -10,7 +10,7 @@ export default function About() {
         description1:
             "",
         image1: "/images/hotelbg.jpg",
-        image2: "/images/hotel-img..jpg",
+        image2: "/images/hotel-img.jpg",
     };
 
     return (

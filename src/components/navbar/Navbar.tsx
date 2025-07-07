@@ -11,9 +11,9 @@ export function Navbar() {
   const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
 
   useEffect(() => {
-    const isSmallScreen = window.innerWidth <= 1200;
-    document.body.style.overflow = click && isSmallScreen ? "hidden" : "auto";
-  }, [click]);
+    const isSmallScreen = window.innerWidth <= 1300;
+    document.body.style.overflow = (click && isSmallScreen) || click1 ? "hidden" : "auto";
+  }, [click, click1]);
 
   const updateRoom = (index: number, type: "adults" | "children", delta: number) => {
     setRooms(prev =>
@@ -48,66 +48,65 @@ export function Navbar() {
       </ul>
 
       <div className="flex items-center max-sm:gap-3 gap-10">
-        <button className="cursor-pointer font-serif px-5 py-2 rounded-[5px] text-white bg-[#ffa844f9]" onClick={() => setclick1(true)}
-        >
+        <button className="cursor-pointer font-serif px-5 py-2 rounded-[5px] text-white bg-[#ffa844f9]" onClick={() => setclick1(true)}>
           Book Now
         </button>
 
-        <div className={`absolute left-1/2 -translate-x-1/2 w-full max-w-[600px] px-4 sm:px-6 py-10 flex justify-center items-center z-[99] bg-white border rounded-lg shadow-lg transition-all duration-700 ${click1
-          ? "top-[90px] opacity-100 pointer-events-auto"
-          : "-top-[500px] opacity-0 pointer-events-none"
-          }`}
-        >
-          <X className="w-6 h-6 text-black absolute top-1 right-1 cursor-pointer" onClick={() => setclick1(false)} />
-          <div className="flex w-full flex-col gap-4 text-black text-sm font-sans">
-            <div className="flex gap-2 max-sm:flex-col w-full">
-              <input type="date" className="border p-2 rounded w-full" />
-              <input type="date" className="border p-2 rounded w-full" />
-            </div>
-
-            <div className="text-gray-700 font-medium text-[15px]">
-              {rooms.reduce((a, r) => a + r.adults, 0)} Adult,{" "}
-              {rooms.reduce((a, r) => a + r.children, 0)} Child - {rooms.length} Room
-              {rooms.length > 1 ? "s" : ""}
-            </div>
-            {rooms.map((room, index) => (
-              <div key={index} className="border rounded p-3 flex flex-col gap-3">
-                <p className="font-semibold">Room {index + 1}</p>
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <button onClick={() => updateRoom(index, "adults", -1)} className="border px-2 py-1 rounded" > - </button>
-                    <span>{room.adults} Adult</span>
-                    <button onClick={() => updateRoom(index, "adults", 1)} className="border px-2 py-1 rounded" > + </button>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <button onClick={() => updateRoom(index, "children", -1)} className="border px-2 py-1 rounded" > - </button>
-                    <span>{room.children} Child</span>
-                    <button onClick={() => updateRoom(index, "children", 1)} className="border px-2 py-1 rounded" > + </button>
-                  </div>
-                </div>
-                {rooms.length > 1 && (
-                  <button className="text-red-600 underline text-xs self-end" onClick={() => removeRoom(index)} >Remove Room </button>
-                )}
+        {/* Modal Overlay */}
+        <div className={`fixed inset-0 z-[99] flex justify-center items-center transition-all duration-700 ${click1 ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+          <div className="absolute inset-0 bg-[#00000050]" onClick={() => setclick1(false)}></div>
+          <div className="relative w-full max-w-[600px] px-4 sm:px-6 py-10 bg-white border rounded-lg shadow-lg z-[100]">
+            <X className="w-6 h-6 text-black absolute top-1 right-1 cursor-pointer" onClick={() => setclick1(false)} />
+            <div className="flex w-full flex-col gap-4 text-black text-sm font-sans">
+              <div className="flex gap-2 max-sm:flex-col w-full">
+                <input type="date" className="border p-2 rounded w-full" />
+                <input type="date" className="border p-2 rounded w-full" />
               </div>
-            ))}
 
-            <button className="text-[#a6792d] underline font-medium text-sm hover:text-[#855e1f] transition" onClick={addRoom}>
-              ADD MORE ROOMS
-            </button>
+              <div className="text-gray-700 font-medium text-[15px]">
+                {rooms.reduce((a, r) => a + r.adults, 0)} Adult,{" "}
+                {rooms.reduce((a, r) => a + r.children, 0)} Child - {rooms.length} Room
+                {rooms.length > 1 ? "s" : ""}
+              </div>
+              {rooms.map((room, index) => (
+                <div key={index} className="border rounded p-3 flex flex-col gap-3">
+                  <p className="font-semibold">Room {index + 1}</p>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <button onClick={() => updateRoom(index, "adults", -1)} className="border px-2 py-1 rounded" > - </button>
+                      <span>{room.adults} Adult</span>
+                      <button onClick={() => updateRoom(index, "adults", 1)} className="border px-2 py-1 rounded" > + </button>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button onClick={() => updateRoom(index, "children", -1)} className="border px-2 py-1 rounded" > - </button>
+                      <span>{room.children} Child</span>
+                      <button onClick={() => updateRoom(index, "children", 1)} className="border px-2 py-1 rounded" > + </button>
+                    </div>
+                  </div>
+                  {rooms.length > 1 && (
+                    <button className="text-red-600 underline text-xs self-end" onClick={() => removeRoom(index)} >Remove Room </button>
+                  )}
+                </div>
+              ))}
 
-            <button className="mt-2 w-full bg-[#ffa844f9] text-white py-2 rounded text-lg hover:bg-[#f99d30]" onClick={() => {
-              alert("Booking submitted!"); setclick1(false);
-            }}>
-              Book Now
-            </button>
+              <button className="text-[#a6792d] underline font-medium text-sm hover:text-[#855e1f] transition" onClick={addRoom}>
+                ADD MORE ROOMS
+              </button>
+
+              <button className="mt-2 w-full bg-[#ffa844f9] text-white py-2 rounded text-lg hover:bg-[#f99d30]" onClick={() => {
+                alert("Booking submitted!"); setclick1(false);
+              }}>
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
 
         <AlignRight className="w-[38px] h-[38px] cursor-pointer text-white" onClick={() => setclick(true)} />
 
-        <div className={`fixed top-0 right-0 h-screen flex flex-col items-center bg-[#121212] z-[99] transition-transform duration-700 transform ${click ? "translate-x-0" : "translate-x-full"} w-[25%] max-md:w-[70%] max-2xl:w-[30%] max-lg:w-[45%] max-sm:w-full overflow-y-auto`}>
+        <div className={`fixed top-0 right-0 py-10 h-screen flex flex-col justify-around items-center bg-[#121212] z-[99] transition-transform duration-700 transform ${click ? "translate-x-0" : "translate-x-full"} w-[25%] max-md:w-[70%] max-2xl:w-[30%] max-lg:w-[45%] max-sm:w-full overflow-y-auto`}>
           <X className="w-[40px] h-[38px] cursor-pointer text-white absolute right-8 top-8" onClick={() => setclick(false)} />
-          <div className="w-full flex flex-col pl-10 pt-10 max-sm:gap-4 gap-5">
+          <div className="w-full flex flex-col pl-10  max-sm:gap-4 gap-5">
             {mobliedata1.map((item, index) => (
               <Link className="text-white border-[#121212] hover:border-white border-b-2 w-[60%] hover:w-[90%] transition-all duration-500 text-lg hover:text-[#F9A442]" key={index} href={item.link} onClick={() => setclick(false)}>
                 {item.name}
@@ -115,9 +114,9 @@ export function Navbar() {
             ))}
           </div>
 
-          <hr className="w-[90%] my-2 mt-3 h-[1px] border-white" />
+          <hr className="w-[90%]  h-[1px] border-white" />
 
-          <div className="w-full flex flex-col px-10 py-5 gap-5">
+          <div className="w-full flex flex-col px-10 gap-5">
             {mobliedata.map((item, index) => (
               <Link key={index} href={item.link} className="flex items-start gap-4 text-white">
                 <div className="mt-1">{item.icon}</div>

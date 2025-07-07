@@ -55,12 +55,12 @@ export default function Gallery() {
 
                 {/* All Images  */}
                 {
-                    showImage == 0 ? (<div className="flex flex-wrap max-sm:w-full max-sm:p-1.5 max-md:w-full max-lg:w-full max-lg:p-1.5  gap-8 w-[70%] justify-center items-center">
+                    showImage == 0 ? (<div className="flex flex-wrap max-sm:w-full max-sm:p-1.5 max-md:w-full max-lg:w-full max-lg:p-1.5  gap-8 w-[90%] justify-center items-center">
                         {
                             images.all.map((item, imageIndex) => {
                                 return (
-                                    <div key={imageIndex} className="flex max-sm:w-55 flex-col  relative w-70 rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-2xl
+                                    <div key={imageIndex} className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
+                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[#0000005b]
                                 " src={item.img}
                                             alt=""
                                             onClick={() => openImg(item.img)}
@@ -79,8 +79,8 @@ export default function Gallery() {
                                 return (
                                     <div
                                         key={imageIndex}
-                                        className="flex max-sm:w-55 flex-col  relative w-70 rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-2xl
+                                        className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
+                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
                                 " src={item.img}
                                             alt=""
                                             onClick={() => openImg(item.img)}
@@ -100,8 +100,8 @@ export default function Gallery() {
                                 return (
                                     <div
                                         key={imageIndex}
-                                        className="flex max-sm:w-55 flex-col  relative w-70 rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-2xl
+                                        className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
+                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
                                 " src={item.img}
                                             alt=""
                                             onClick={() => openImg(item.img)}
@@ -120,8 +120,8 @@ export default function Gallery() {
                                 return (
                                     <div
                                         key={imageIndex}
-                                        className="flex max-sm:w-55 flex-col  relative w-70 rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-2xl
+                                        className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
+                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
                                 " src={item.img}
                                             alt=""
                                             onClick={() => openImg(item.img)}
@@ -138,8 +138,8 @@ export default function Gallery() {
                         {
                             images.swimmingpool.map((item, imageIndex) => {
                                 return (
-                                    <div key={imageIndex} className="flex max-sm:w-55 flex-col  relative w-70 rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-2xl
+                                    <div key={imageIndex} className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
+                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
                                 " src={item.img}
                                             alt=""
                                             onClick={() => openImg(item.img)}

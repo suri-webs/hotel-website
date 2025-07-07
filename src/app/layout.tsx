@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${playfairDisplay.variable} flex flex-col antialiased`}>
+      <body className={`${geistSans.variable} ${playfairDisplay.variable} flex flex-col overflow-x-hidden antialiased`}>
         <Navbar />
         {children}
         <Footer />

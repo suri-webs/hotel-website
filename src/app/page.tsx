@@ -12,6 +12,7 @@ import About from "@/components/about/About";
 export default function Home() {
   return (
     <>
+    <div className="overflow-x-hidden">
       <Header />
       <About />
       <Services />
@@ -20,6 +21,8 @@ export default function Home() {
       <Activities />
       <Testmonilas />
       <ContactUs />
+    </div>
+
     </>
 
   );

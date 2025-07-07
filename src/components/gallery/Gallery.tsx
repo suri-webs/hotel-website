@@ -20,7 +20,7 @@ export default function Gallery() {
     return (
         <section className="flex flex-col gap-1 justify-center items-center w-full  max-lg:w-full">
             {/* Gallery Header  */}
-            <header className="h-[650px] max-sm:h-[730px] max-lg:w-full w-full bg-center bg-cover flex flex-col justify-center items-center relative ">
+            <header className="h-[650px] max-sm:h-[720px] max-lg:w-full w-full bg-center bg-cover flex flex-col justify-center items-center relative ">
                 <div className="absolute inset-0 bg-[#0000006f] z-2 max-sm:h-full"></div>
                 <div
                     className="w-full inset-0 max-lg:w-full h-full max-sm:h-full bg-cover bg-center absolute z-0"

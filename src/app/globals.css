@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -53,8 +55,4 @@
 
 .zooming-image {
   animation: zoomEffect 20s ease-in-out infinite alternate;
-}
-
-body {
-  overflow-x: hidden;
 }

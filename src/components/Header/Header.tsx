@@ -21,7 +21,7 @@ export default function Header() {
 
     return (
         <header className="w-full relative overflow-hidden h-[730px] max-sm:h-[720px] flex flex-col max-sm:justify-center max-sm:items-center justify-end p-[50px]  items-start max-sm:p-[20px]  ">
-            <div className="absolute inset-0 bg-[#000000b6] z-10"></div>
+            <div className="absolute inset-0 bg-[#000000d3] z-10"></div>
 
             {data.map((src, index) => (
                 <Image key={index} src={src}

@@ -13,15 +13,14 @@ export const navbarData: NavbarItem[] = [
 ];
 
 export const mobliedata1 = [
-  { name: "About Us", link: "/" },
+  { name: "About Us", link: "/about" },
   { name: "Menu", link: "/" },
-  { name: "Rooms", link: "/" },
+  { name: "Rooms", link: "/rooms" },
   { name: "Meals", link: "/" },
   { name: "Information & Policy", link: "/" },
-  { name: "Explore Rishikesh", link: "/" },
-  { name: "Join us", link: "/" },
+  { name: "Explore Rishikesh", link: "/gallery" },
   { name: "Feedback", link: "/" },
-  { name: "Contact Us", link: "/" },
+  { name: "Contact Us", link: "/contact" },
 ];
 
 export const mobliedata = [
@@ -40,7 +39,7 @@ export const mobliedata = [
   {
     icon: <Clock size={30} />,
     label: "SEND EMAIL",
-    info: "Mon - Sat 8:00 - 6:30,\nSunday - CLOSED",
+    info: "Mon - Sat 8:00 - 6:30, Sunday - CLOSED",
     link: "#",
   },
 ];

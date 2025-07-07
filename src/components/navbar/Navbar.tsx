@@ -4,7 +4,7 @@ import { AlignRight, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { mobliedata, mobliedata1, navbarData } from "@/lib/navbar";
-
+import { roomOptions } from "@/lib/RoomsPage";
 export function Navbar() {
   const [click, setclick] = useState(false);
   const [click1, setclick1] = useState(false);
@@ -57,6 +57,14 @@ export function Navbar() {
           <div className="relative w-full max-w-[600px] px-4 sm:px-6 py-10 bg-white border rounded-lg shadow-lg z-[100]">
             <X className="w-6 h-6 text-black absolute top-1 right-1 cursor-pointer" onClick={() => setclick1(false)} />
             <div className="flex w-full flex-col gap-4 text-black text-sm font-sans">
+              <select name="" className="w-full rounded-[4px] h-[40px] border" id="">
+                {roomOptions.map((room, index) => (
+                  <option key={index} value={room.toLowerCase().replace(/[^a-z0-9]/g, "-")}>
+                    {room}
+                  </option>
+                ))}
+              </select>
+
               <div className="flex gap-2 max-sm:flex-col w-full">
                 <input type="date" className="border p-2 rounded w-full" />
                 <input type="date" className="border p-2 rounded w-full" />

@@ -5,7 +5,7 @@ export default function Aboutheader() {
         <div className="absolute h-[100%]  inset-0 bg-[url('/images/about-header-bg.webp')] bg-cover bg-center bg-fixed "></div>
   
         {/* Dark overlay on top */}
-        <div className="absolute  h-[100%] inset-0 bg-[#0000009f] z-20"></div>
+        <div className="absolute  h-[100%] inset-0 bg-[#000000af] z-20"></div>
   
         {/* Content */}
         <div className="absolute inset-0 z-30 flex flex-col justify-center items-center px-4 text-center text-white">

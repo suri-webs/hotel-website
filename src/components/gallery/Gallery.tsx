@@ -1,177 +1,181 @@
-"use client"
-import { useState } from "react"
-import { ShieldX } from 'lucide-react';
+"use client";
+import { roomOptions, Rooms } from "@/lib/RoomsPage";
+import { X } from "lucide-react";
 import Image from "next/image";
-import { images } from "@/lib/gallery";
-export default function Gallery() {
-    const [selectedImage, setselectedImage] = useState<string | null>(null);
+import { useEffect, useState } from "react";
+export default function RoomsContainer() {
+  const [click1, setclick1] = useState(false);
+  const [visibleCards, setVisibleCards] = useState(Rooms.length);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [click, setclick] = useState(false);
 
-    const [showImage, setshowImage] = useState(0) 
-
-    const btns = ['all', 'rooms', 'restaurant', 'spa', 'swimmimg pool']
-    const openImg = (img: string) => { 
-        setselectedImage(img);
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
     };
 
-    const closeImg = () => {
-        setselectedImage(null);
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (isSmallScreen) {
+      setVisibleCards(4);
+    } else {
+      setVisibleCards(Rooms.length);
+    }
+  }, [isSmallScreen]);
+
+  const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
+
+  useEffect(() => {
+    const handleResizeOrClick = () => {
+      const isSmall = window.innerWidth <= 1300;
+      document.body.style.overflow = (click && isSmall) || click1 ? "hidden" : "auto";
     };
 
-    return (
-        <section className="flex flex-col gap-1 justify-center items-center w-full  max-lg:w-full">
-            {/* Gallery Header  */}
-            <header className="h-[650px] max-sm:h-[720px] max-lg:w-full w-full bg-center bg-cover flex flex-col justify-center items-center relative ">
-                <div className="absolute inset-0 bg-[#0000006f] z-2 max-sm:h-full"></div>
-                <div
-                    className="w-full inset-0 max-lg:w-full h-full max-sm:h-full bg-cover bg-center absolute z-0"
-                    style={{ backgroundImage: "url(/Gallery.jpg)" }}
-                ></div>
-                <h2 className="text-6xl max-md:text-3xl  font-serif text-white z-10 text-center px-4 font-light tracking-wider max-lg:text-4xl">
-                    GALLERY
+    handleResizeOrClick(); 
+    window.addEventListener("resize", handleResizeOrClick);
+
+    return () => window.removeEventListener("resize", handleResizeOrClick);
+  }, [click, click1]);
+
+  const updateRoom = (index: number, type: "adults" | "children", delta: number) => {
+    setRooms(prev =>
+      prev.map((room, i) =>
+        i === index
+          ? { ...room, [type]: Math.max(type === "adults" ? 1 : 0, room[type] + delta) }
+          : room
+      )
+    );
+  };
+
+  const addRoom = () => {
+    setRooms([...rooms, { adults: 1, children: 0 }]);
+  };
+
+  const removeRoom = (index: number) => {
+    setRooms(prev => prev.filter((_, i) => i !== index));
+  };
+
+  return (
+    <section className=" w-full flex mb-20 flex-col justify-center p-5 gap-14 items-center">
+      <div className="w-full flex justify-center items-center flex-col gap-5 h-[200px] max-sm:h-full">
+        <h1 className="text-4xl max-sm:text-2xl font-playfair-display text-amber-600">Rest Recharge Repeat</h1>
+        <p className="text-xl w-[70%] max-sm:w-full max-sm:text-lg text-center text-gray-600">
+          Our rooms are built for those who appreciate simplicity and comfort. Affordable yet cozy, making your stay in RISHIKESH both pleasant and budget-friendly that let you spend less on stay and more on experiencing the magic of RISHIKESH.
+        </p>
+      </div>
+
+      <div className="w-full flex justify-center items-center">
+        <div className="grid w-[85%] max-sm:w-full gap-12 justify-center items-center" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", }} >
+          {Rooms.slice(0, visibleCards).map((item, id) => (
+            <div key={id} className="flex flex-col overflow-hidden border border-[#0000004a] h-[450px] w-full max-w-[380px] shadow-md rounded-[8px] gap-3 relative" >
+              <div className="overflow-hidden">
+                <Image src={item.img} className="!h-[220px] !w-full object-cover hover:scale-110 transition-all duration-400" alt="" width={1000} height={120} />
+              </div>
+              <div className="p-4">
+                <h2 className="text-2xl mb-2">
+                  <span className="font-playfair-display">Room No </span>
+                  {item.heading}
                 </h2>
-                <p className="text-white/100 z-10 mt-4 text-lg font-light">Discover Our Luxury Spaces</p>
-            </header>
+                <p className="text-gray-600 text-sm">{item.about}</p>
+                <div className="flex justify-between">
+                  <button className="mt-[20px] hover:underline bg-[#ffa844f9] text-xl max-2xl:text-sm max-lg:px-6 text-white px-7 py-2 rounded-[8px]">
+                    {item.view}
+                  </button>
+                  <button className="mt-[20px] border-2 text-xl border-[#ffa844f9] text-black px-7 py-2 max-2xl:text-sm max-lg:px-6 rounded-[8px]"  onClick={() => setclick1(true)}>
+                    Book Now
+                  </button>
 
+                  <div className={`fixed inset-0 z-[99] flex justify-center items-center transition-all duration-700 ${click1 ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+                    <div className="absolute inset-0 bg-[#00000021]" onClick={() => setclick1(false)}></div>
+                    <div className="relative w-full max-w-[600px] px-4 sm:px-6 py-10 bg-white border rounded-lg shadow-lg z-[100]">
+                      <X className="w-6 h-6 text-black absolute top-1 right-1 cursor-pointer" onClick={() => setclick1(false)} />
+                      <div className="flex w-full flex-col gap-4 text-black text-sm font-sans">
+                        <select name="" className="w-full rounded-[4px] h-[40px] border" id="">
+                          {roomOptions.map((room, index) => (
+                            <option key={index} value={room.toLowerCase().replace(/[^a-z0-9]/g, "-")}>
+                              {room}
+                            </option>
+                          ))}
+                        </select>
 
-            {/* Gallery main Head  */}
-            <h2 className="text-black  text-4xl font-serif mt-30 mb-3.5 max-sm:text-3xl">Our Gallery</h2>
-
-            <div className="flex flex-col gap-6 mb-10 justify-center items-center w-full">
-
-
-                <ul className=" h-12 w-full rounded-xl list-none flex flex-row [@media(max-width:430px)]:flex-wrap  [@media(max-width:430px)]:text-
-                  justify-center gap-9 items-center cursor-pointer:">
-                    {
-                        btns.map((value, index) => (
-                            <li key={index}
-                                onClick={() => setshowImage(index)}
-                                className={`text-[18px] cursor-pointer [@media(max-width:550px)]:text-[11px] max-sm:text-[15px]  font-semibold tracking-widest uppercase  text-center rounded-[5px] ${showImage === index ? "text-amber-600" : "text-black/70"}`}>{value}</li>
-
-                        ))
-                    }
-                </ul>
-
-
-
-                {/* All Images  */}
-                {
-                    showImage == 0 ? (<div className="flex flex-wrap max-sm:w-full max-sm:p-1.5 max-md:w-full max-lg:w-full max-lg:p-1.5  gap-8 w-[90%] justify-center items-center">
-                        {
-                            images.all.map((item, imageIndex) => {
-                                return (
-                                    <div key={imageIndex} className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[#0000005b]
-                                " src={item.img}
-                                            alt=""
-                                            onClick={() => openImg(item.img)}
-                                       width={120} height={120} /> {item.data}</div>
-                                )
-                            })
-                        }
-                    </div>) : null
-                }
-
-                {/* Room Images  */}
-                {
-                    showImage == 1 ? (<div className="flex flex-wrap max-sm:w-full max-sm:p-1.5 max-md:w-full max-lg:w-full  gap-8 w-[70%] justify-center items-center">
-                        {
-                            images.rooms.map((item, imageIndex) => {
-                                return (
-                                    <div
-                                        key={imageIndex}
-                                        className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
-                                " src={item.img}
-                                            alt=""
-                                            onClick={() => openImg(item.img)}
-                                        width={120} height={120}    /> </div>
-                                )
-                            })
-                        }
-                    </div>) : null
-                }
-
-
-                {/* Restaurant Images */}
-                {
-                    showImage == 2 ? (<div className="flex flex-wrap max-sm:w-full max-sm:p-1.5 max-md:w-full max-lg:w-full  gap-8 w-[70%] justify-center items-center">
-                        {
-                            images.restaurant.map((item, imageIndex) => {
-                                return (
-                                    <div
-                                        key={imageIndex}
-                                        className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
-                                " src={item.img}
-                                            alt=""
-                                            onClick={() => openImg(item.img)}
-                                       width={120} height={120}     /> </div>
-                                )
-                            })
-                        }
-                    </div>) : null
-                }
-
-                {/* Spa Images  */}
-                {
-                    showImage == 3 ? (<div className="flex flex-wrap max-sm:w-full max-sm:p-1.5 max-md:w-full max-lg:w-full  gap-8 w-[70%] justify-center items-center">
-                        {
-                            images.spa.map((item, imageIndex) => {
-                                return (
-                                    <div
-                                        key={imageIndex}
-                                        className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
-                                " src={item.img}
-                                            alt=""
-                                            onClick={() => openImg(item.img)}
-                                width={120} height={120}            /> </div>
-                                )
-                            })
-                        }
-                    </div>) : null
-                }
-
-                {/* Swimming Pool  */}
-                {
-                    showImage == 4 ? (<div className="flex flex-wrap max-sm:w-full max-sm:p-1.5 max-md:w-full max-lg:w-full  gap-8 w-[70%] justify-center items-center">
-                        {
-                            images.swimmingpool.map((item, imageIndex) => {
-                                return (
-                                    <div key={imageIndex} className="flex max-sm:w-55 flex-col  relative w-[380px] rounded-xl h-55 tracking-widest text-gray-700  justify-center items-center">
-                                        <Image className=" [@media(max-width:550px)]:w-50  [@media(max-width:550px)]:h-45 [@media(max-width:550px)]:p-0.5 [@media(max-width:550px)]:gap-1 hover:scale-105 hover:shadow-xl transition-all duration-300 w-full  h-full object-cover overflow-hidden group-hover:scale-105 rounded-[8px] border border-[black]
-                                " src={item.img}
-                                            alt=""
-                                            onClick={() => openImg(item.img)}
-                                    width={120} height={120}        /> </div>
-                                )
-                            })
-                        }
-                    </div>) : null
-                }
-
-            </div>
-            {
-                selectedImage && (
-                    <div className="fixed top-0 left-0 w-full h-full bg-black/80 flex justify-center items-center z-50  ">
-                        <div className="relative  w-fit ">
-                            <Image
-                                className="w-full max-sm:w-110 max-lg:w-170 max-md:w-140  [@media(max-width:500px)]:w-80 h-[80vh] 
-                                rounded-lg object-contain"
-                                src={selectedImage}
-                               width={120} height={120}     alt="Selected Image"
-                            />
-                            <button
-                                onClick={closeImg}
-                                className="absolute -right-8 -top-5 bg-white/80 rounded-full p-1 shadow-lg hover:scale-110 transition"
-                            >
-                                <ShieldX className="text-red-500 w-6 h-6" />
-                            </button>
+                        <div className="flex gap-2 max-sm:flex-col w-full">
+                          <input type="date" className="border p-2 rounded w-full" />
+                          <input type="date" className="border p-2 rounded w-full" />
                         </div>
-                    </div>
-                )
-            }
 
-        </section>
-    )
+                        <div className="text-gray-700 font-medium text-[15px]">
+                          {rooms.reduce((a, r) => a + r.adults, 0)} Adult,{" "}
+                          {rooms.reduce((a, r) => a + r.children, 0)} Child - {rooms.length} Room
+                          {rooms.length > 1 ? "s" : ""}
+                        </div>
+                        {rooms.map((room, index) => (
+                          <div key={index} className="border rounded p-3 flex flex-col gap-3">
+                            <p className="font-semibold">Room {index + 1}</p>
+                            <div className="flex justify-between items-center">
+                              <div className="flex items-center gap-2">
+                                <button onClick={() => updateRoom(index, "adults", -1)} className="border px-2 py-1 rounded" > - </button>
+                                <span>{room.adults} Adult</span>
+                                <button onClick={() => updateRoom(index, "adults", 1)} className="border px-2 py-1 rounded" > + </button>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <button onClick={() => updateRoom(index, "children", -1)} className="border px-2 py-1 rounded" > - </button>
+                                <span>{room.children} Child</span>
+                                <button onClick={() => updateRoom(index, "children", 1)} className="border px-2 py-1 rounded" > + </button>
+                              </div>
+                            </div>
+                            {rooms.length > 1 && (
+                              <button className="text-red-600 underline text-xs self-end" onClick={() => removeRoom(index)} >Remove Room </button>
+                            )}
+                          </div>
+                        ))}
+
+                        <button className="text-[#a6792d] underline font-medium text-sm hover:text-[#855e1f] transition" onClick={addRoom}>
+                          ADD MORE ROOMS
+                        </button>
+
+                        <button className="mt-2 w-full bg-[#ffa844f9] text-white py-2 rounded text-lg hover:bg-[#f99d30]" onClick={() => {
+                          alert("Booking submitted!"); setclick1(false);
+                        }}>
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {isSmallScreen && (
+        <div className="mt-5 flex gap-4">
+          {visibleCards < Rooms.length && (
+            <button
+              onClick={() => {
+                const next = visibleCards + 2;
+                setVisibleCards(next > Rooms.length ? Rooms.length : next);
+              }}
+              className="px-6 py-2 bg-[#FFAA48] text-white rounded-md hover:bg-[#ff8848]"
+            >
+              Show More
+            </button>
+          )}
+          {visibleCards > 4 && (
+            <button
+              onClick={() => setVisibleCards(4)}
+              className="px-6 py-2 bg-gray-300 text-black rounded-md hover:bg-gray-400"
+            >
+              Show Less
+            </button>
+          )}
+        </div>
+      )}
+
+    </section>
+  );
 }

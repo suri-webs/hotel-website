@@ -2,7 +2,7 @@
 
 export default function RoomsHeader() {
     return (
-        <section className="h-[650px] w-full flex flex-col relative">
+        <section className="h-[650px] max-sm:h-[730px] w-full flex flex-col relative">
             {/* Background-Image */}
             <div className="absolute h-[100%] w-full inset-0 bg-[url('/images/RoomHeader.jpg')]  bg-cover bg-center bg-fixed"></div>
             {/* Dark-overLay */}

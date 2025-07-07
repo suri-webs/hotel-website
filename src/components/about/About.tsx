@@ -14,7 +14,7 @@ export default function About() {
     };
 
     return (
-        <section className="w-full h-screen max-lg:h-full py-16 px-4 bg-[#c2c0c01f] flex flex-col lg:flex-row items-center gap-10">
+        <section className="w-full h-screen max-lg:h-full max-sm:py-10 max-sm:px-2 py-16 px-4 bg-[#c2c0c01f] flex flex-col lg:flex-row items-center gap-10">
             {/* Image Section */}
             <div className="relative w-full lg:w-1/2 flex justify-center items-center min-h-[300px] sm:min-h-[400px] md:min-h-[450px]">
 
@@ -33,8 +33,8 @@ export default function About() {
             </div>
 
             {/* Text Section */}
-            <div className="w-full lg:w-1/2 flex flex-col gap-5  lg:text-left p-4">
-                <h6 className="text-[28px] max-sm:text-[25px] text-[#de8a1e] flex justify-center lg:justify-start items-center gap-2">
+            <div className="w-full max-sm:w-[95%] max-sm:p-0 lg:w-1/2 flex flex-col gap-5  lg:text-left p-4">
+                <h6 className="text-[28px] max-sm:text-[25px] text-[#de8a1e] ">
                     {data.subtitle}
                 </h6>
 
@@ -47,9 +47,8 @@ export default function About() {
                 </p>
 
 
-                <div className="flex justify-center lg:justify-start">
+                <div className="">
                     <Button text={"Get in Touch"} />
-
                 </div>
             </div>
         </section>

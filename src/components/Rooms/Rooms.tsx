@@ -8,16 +8,15 @@ export default function Rooms() {
     interface Room {
         images: string;
         text: string;
-        price: string;
     }
     const divdata: Room[] = [
-        { images: "/rooms-images/image-3.jpg", text: "Junior Suite", price: "₹2000/Night" },
-        { images: "/rooms-images/image-4.jpg", text: "Family Rooms", price: "₹2500/Night" },
+        { images: "/rooms-images/image-3.jpg", text: "Junior Suite", },
+        { images: "/rooms-images/image-4.jpg", text: "Family Rooms", },
     ];
     const divdata2: Room[] = [
-        { images: "/rooms-images/iamge-1.jpg", text: "Executive Room", price: "₹2000/Night" },
-        { images: "/rooms-images/image-6.jpg", text: "Presidential Suite", price: "₹4500/Night" },
-        { images: "/rooms-images/image-8.jpg", text: "Luxury Suite", price: "₹5000/Night" },
+        { images: "/rooms-images/iamge-1.jpg", text: "Executive Room",  },
+        { images: "/rooms-images/image-6.jpg", text: "Presidential Suite", },
+        { images: "/rooms-images/image-8.jpg", text: "Luxury Suite",},
     ];
     const [showMore, setShowMore] = useState(false);
 
@@ -35,9 +34,8 @@ export default function Rooms() {
                             <Image src={item.images} alt=""
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0"   width={120} height={120} />
                             <div className="absolute inset-0 bg-[#2222221d] z-10 pointer-events-none"></div>
-                            <span className="absolute  cursor-pointer bottom-[-90px] right-0 text-white text-lg justify-end z-20 flex rounded-l-md flex-col transition-all duration-500 group-hover:-bottom-1 gap-2 bg-[#151515a5] p-[10px] max-sm:text-[17px]">
+                            <span className="absolute  w-[180px]  cursor-pointer bottom-[-95px] right-0 text-white text-lg justify-end z-20 flex rounded-l-md flex-col transition-all duration-500 group-hover:-bottom-1 gap-2 bg-[#151515a5] p-[10px] max-sm:text-[17px]">
                                 <p>{item.text}</p>
-                                <p className="text-[17px]">{item.price}</p>
                                 <button className="px-[20px]  cursor-pointer rounded-[10px]  text-[15px] py-[7px] bg-[#f39c39fc]">Book Now</button>
 
                             </span>
@@ -51,9 +49,8 @@ export default function Rooms() {
                             <Image src={item.images} alt=""
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0"   width={120} height={120} />
                             <div className="absolute inset-0 bg-[#2222221d] z-10 pointer-events-none"></div>
-                            <span className="absolute  cursor-pointer bottom-[-90px] right-0 text-white text-lg max-sm:text-[17px] justify-end z-20 flex rounded-l-md flex-col transition-all duration-500 group-hover:-bottom-1 gap-2 bg-[#151515a5] p-[10px]">
+                            <span className="absolute w-[180px] cursor-pointer bottom-[-95px] right-0 text-white text-lg max-sm:text-[17px] justify-end z-20 flex rounded-l-md flex-col transition-all duration-500 group-hover:-bottom-1 gap-2 bg-[#151515a5] p-[10px]">
                                 <p>{item.text}</p>
-                                <p className="text-[17px]">{item.price}</p>
                                 <button className="px-[20px]  cursor-pointer rounded-[10px] text-[15px] py-[7px] bg-[#f39c39fc]">Book Now</button>
 
                             </span>

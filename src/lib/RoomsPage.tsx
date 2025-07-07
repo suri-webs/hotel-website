@@ -43,7 +43,7 @@ export const Rooms:RoomsContant[] =[
     },
     {
         img:"/images/room6.webp",
-        heading:"# 203",
+        heading:"# 203 (Dormitory)",
         price:1800.00,
         about:" Our rooms offer a harmonious blend of comfort and elegance, designedto provide an exceptional stay for every guest.",
         view:"View more",

@@ -12,10 +12,15 @@ export default function Location() {
             <div className="w-[40%] z-99 h-[65%] rounded-[10px] overflow-hidden shadow-[0_0_1px_#2a2a2a]
              max-md:w-[85%] max-md:h-[50%]">
                 <iframe
-                    className="w-full h-full max-sm:w-full max-md:h-full"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8334727226056!2d77.2167017752892!3d28.63475267566346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce273c8b08e31%3A0x4b9315d64e4d31b8!2sSkillCircle%20-%20Best%20Digital%20Marketing%20%26%20Data%20Science%20Institute!5e0!3m2!1sen!2sin!4v1745066672413!5m2!1sen!2sin"
+                    title="Hotel Location"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d204.9913741944246!2d78.32021521125125!3d30.13441395225515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDA4JzAzLjgiTiA3OMKwMTknMTMuMSJF!5e1!3m2!1sen!2sin!4v1751015409177!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
                     loading="lazy"
-                ></iframe>
+                    referrerPolicy="no-referrer-when-downgrade"
+                />
             </div>
             <div className="w-[45%] h-[95%] max-md:w-[85%]  flex flex-col justify-start mt-[150px] max-md:mt-[0px] gap-[40px] z-99 p-[22px] max-sm:p-[0px] max-sm:py-[25px]">
                 <div className="flex flex-col gap-[45px] max-sm:gap-[20px]  max-md:justify-center max-md:items-center max-md:h-fit">

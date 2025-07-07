@@ -21,7 +21,7 @@ export function ContactUs() {
                         <Phone className="w-5 text-[#f39c39fc]" /> +91 9876543210
                     </p>
                     <p className="flex items-center gap-2">
-                        <FileSliders className="w-5 text-[#f39c39fc]" /> +91 1234567890
+                        <Phone className="w-5 text-[#f39c39fc]" /> +91 1234567890
                     </p>
                 </div>
 

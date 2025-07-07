@@ -2,128 +2,14 @@
 import { useState } from "react"
 import { ShieldX } from 'lucide-react';
 import Image from "next/image";
-
+import { images } from "@/lib/gallery";
 export default function Gallery() {
-    const [selectedImage, setselectedImage] = useState<string | null>(null); // state for selected image
+    const [selectedImage, setselectedImage] = useState<string | null>(null);
 
-    const [showImage, setshowImage] = useState(0) //State for Showing the Gallery 
-    const images = {
-        all: [
-            {
-                img: "/gallery-1.jpg",
-                data: "Room"
-            },
-            {
-                img: "/gallery-3.jpg",
-                data: "Restaurant"
-            },
-            {
-                img: "/gallery-4.jpg",
-                data: "Room"
-            },
-            {
-                img: "/gallery-5.jpg",
-                data: "Swimming Pool"
-            },
-            {
-                img: "/gallery-6.jpg",
-                data: "Swimming Pool"
-            },
-            {
-                img: "/gallery-7.jpg",
-                data: "Room"
-            },
-            {
-                img: "/gallery-8.jpg",
-                data: "Restaurant"
-            },
-            {
-                img: "/gallery-9.jpg",
-                data: "Restaurant"
-            },
-            {
-                img: "/gallery-10.jpg",
-                data: "Spa"
-            },
-            {
-                img: "/gallery-11.jpg",
-                data: "Restaurant"
-            },
-            {
-                img: "/gallery-12.jpg",
-                data: "Restaurant"
-            },
-            {
-                img: "/gallery-13.jpg",
-                data: "Swimming Pool"
-            }
-        ],
-        rooms: [
-            {
-                img: "/gallery-1.jpg"
-            },
-            {
-                img: "/gallery-7.jpg"
-            },
-            {
-                img: "/gallery-2.jpg"
-            },
-            {
-                img: "/gallery-4.jpg"
-            },
-            {
-                img: "/images/HotelsImaegs1.jpg"
-            },
-            {
-                img: "/images/HotelsImage3.jpg"
-            },
-            {
-                img: "/images/HotelsImage4.avif"
-            }
-        ],
-        restaurant: [
-            {
-                img: "/gallery-8.jpg"
-            },
-            {
-                img: "/gallery-9.jpg"
-            },
-            {
-                img: "/gallery-11.jpg"
-            },
-            {
-                img: "/gallery-12.jpg"
-            },
-            {
-                img: "/gallery-3.jpg"
-            }
-        ],
-        spa: [
-            {
-                img: "/gallery-10.jpg"
-            },
-            {
-                img: "/spa2.avif"
-            }
-        ],
-        swimmingpool: [
-            {
-                img: "/gallery-2.jpg"
-            },
-            {
-                img: "/gallery-5.jpg"
-            },
-            {
-                img: "/gallery-6.jpg"
-            },
-            {
-                img: "/gallery-13.jpg"
-            }
-        ]
-    }
+    const [showImage, setshowImage] = useState(0) 
 
     const btns = ['all', 'rooms', 'restaurant', 'spa', 'swimmimg pool']
-    const openImg = (img: string) => { // ✅ typed img as string
+    const openImg = (img: string) => { 
         setselectedImage(img);
     };
 
@@ -134,7 +20,7 @@ export default function Gallery() {
     return (
         <section className="flex flex-col gap-1 justify-center items-center w-full  max-lg:w-full">
             {/* Gallery Header  */}
-            <header className="h-[650px] max-sm:h-[70vh] max-lg:w-full w-full bg-center bg-cover flex flex-col justify-center items-center relative ">
+            <header className="h-[650px] max-sm:h-[730px] max-lg:w-full w-full bg-center bg-cover flex flex-col justify-center items-center relative ">
                 <div className="absolute inset-0 bg-[#0000006f] z-2 max-sm:h-full"></div>
                 <div
                     className="w-full inset-0 max-lg:w-full h-full max-sm:h-full bg-cover bg-center absolute z-0"

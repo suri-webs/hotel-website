@@ -23,6 +23,23 @@
   font-weight: 400;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FE9A00;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 
 @keyframes zoomEffect {
   0% {
@@ -36,4 +53,8 @@
 
 .zooming-image {
   animation: zoomEffect 20s ease-in-out infinite alternate;
+}
+
+body {
+  overflow-x: hidden;
 }

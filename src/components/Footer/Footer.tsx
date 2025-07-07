@@ -78,7 +78,7 @@ export default function Footer() {
         alt="Footer Background"
         width={120} height={120}
       />
-      <div className=" bg-[#241503e5] absolute inset-0 w-full h-full z-0" />
+      <div className=" bg-[#121212] absolute inset-0 w-full h-full z-0" />
 
       {/* Main Content */}
       <div className="w-full max-w-[1310px] mx-auto flex flex-col lg:flex-row flex-wrap gap-15 justify-between relative z-10">

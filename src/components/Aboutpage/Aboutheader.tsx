@@ -1,6 +1,6 @@
 export default function Aboutheader() {
     return (
-      <header className="h-[650px] w-full relative flex justify-center items-center">
+      <header className="h-[650px] max-sm:h-[730px] w-full relative flex justify-center items-center">
         {/* Background image */}
         <div className="absolute h-[100%]  inset-0 bg-[url('/images/about-header-bg.webp')] bg-cover bg-center bg-fixed "></div>
   

@@ -1,4 +1,4 @@
-import { Mail, Phone, FileSliders } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import Heading from "../Heading/Heading";
 
 export function ContactUs() {

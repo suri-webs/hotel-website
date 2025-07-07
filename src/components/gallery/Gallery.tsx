@@ -3,11 +3,12 @@ import { roomOptions, Rooms } from "@/lib/RoomsPage";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 export default function RoomsContainer() {
   const [click1, setclick1] = useState(false);
   const [visibleCards, setVisibleCards] = useState(Rooms.length);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [click, setclick] = useState(false);
+  const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -27,19 +28,16 @@ export default function RoomsContainer() {
     }
   }, [isSmallScreen]);
 
-  const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
-
   useEffect(() => {
-    const handleResizeOrClick = () => {
+    const handleResize = () => {
       const isSmall = window.innerWidth <= 1300;
-      document.body.style.overflow = (click && isSmall) || click1 ? "hidden" : "auto";
+      document.body.style.overflow = isSmall || click1 ? "hidden" : "auto";
     };
 
-    handleResizeOrClick(); 
-    window.addEventListener("resize", handleResizeOrClick);
-
-    return () => window.removeEventListener("resize", handleResizeOrClick);
-  }, [click, click1]);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [click1]);
 
   const updateRoom = (index: number, type: "adults" | "children", delta: number) => {
     setRooms(prev =>
@@ -85,7 +83,7 @@ export default function RoomsContainer() {
                   <button className="mt-[20px] hover:underline bg-[#ffa844f9] text-xl max-2xl:text-sm max-lg:px-6 text-white px-7 py-2 rounded-[8px]">
                     {item.view}
                   </button>
-                  <button className="mt-[20px] border-2 text-xl border-[#ffa844f9] text-black px-7 py-2 max-2xl:text-sm max-lg:px-6 rounded-[8px]"  onClick={() => setclick1(true)}>
+                  <button className="mt-[20px] border-2 text-xl border-[#ffa844f9] text-black px-7 py-2 max-2xl:text-sm max-lg:px-6 rounded-[8px]" onClick={() => setclick1(true)}>
                     Book Now
                   </button>
 
@@ -175,7 +173,6 @@ export default function RoomsContainer() {
           )}
         </div>
       )}
-
     </section>
   );
 }

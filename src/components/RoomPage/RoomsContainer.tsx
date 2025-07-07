@@ -3,11 +3,12 @@ import { roomOptions, Rooms } from "@/lib/RoomsPage";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 export default function RoomsContainer() {
   const [click1, setclick1] = useState(false);
   const [visibleCards, setVisibleCards] = useState(Rooms.length);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [click, setclick] = useState(false);
+  const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -26,12 +27,11 @@ export default function RoomsContainer() {
       setVisibleCards(Rooms.length);
     }
   }, [isSmallScreen]);
-  const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
 
   useEffect(() => {
     const isSmallScreen = window.innerWidth <= 1300;
-    document.body.style.overflow = (click && isSmallScreen) || click1 ? "hidden" : "auto";
-  }, [click, click1]);
+    document.body.style.overflow = isSmallScreen || click1 ? "hidden" : "auto";
+  }, [click1]);
 
   const updateRoom = (index: number, type: "adults" | "children", delta: number) => {
     setRooms(prev =>

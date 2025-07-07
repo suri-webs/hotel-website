@@ -52,7 +52,6 @@ export function Navbar() {
           Book Now
         </button>
 
-        {/* Modal Overlay */}
         <div className={`fixed inset-0 z-[99] flex justify-center items-center transition-all duration-700 ${click1 ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
           <div className="absolute inset-0 bg-[#00000050]" onClick={() => setclick1(false)}></div>
           <div className="relative w-full max-w-[600px] px-4 sm:px-6 py-10 bg-white border rounded-lg shadow-lg z-[100]">
@@ -108,7 +107,7 @@ export function Navbar() {
           <X className="w-[40px] h-[38px] cursor-pointer text-white absolute right-8 top-8" onClick={() => setclick(false)} />
           <div className="w-full flex flex-col pl-10  max-sm:gap-4 gap-5">
             {mobliedata1.map((item, index) => (
-              <Link className="text-white border-[#121212] hover:border-white border-b-2 w-[60%] hover:w-[90%] transition-all duration-500 text-lg hover:text-[#F9A442]" key={index} href={item.link} onClick={() => setclick(false)}>
+              <Link className="text-white border-[#121212] hover:border-white border-b-2 w-[60%] hover:w-[90%] transition-all duration-300 text-lg hover:text-[#F9A442]" key={index} href={item.link} onClick={() => setclick(false)}>
                 {item.name}
               </Link>
             ))}

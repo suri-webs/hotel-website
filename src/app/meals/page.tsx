@@ -1,4 +1,5 @@
 import MealsDinner from "@/components/meals/meals-dinner";
+import CuisineCTA from "@/components/meals/meals-exprience";
 import MealsHeader from "@/components/meals/meals-header";
 import MealsLunch from "@/components/meals/meals-lunch";
 import Soups from "@/components/meals/meals-soup";
@@ -14,6 +15,7 @@ export default function MealsHome() {
             <MealsDinner />
             <TeaAndBeverages />
             <Soups />
+            <CuisineCTA />
         </>
     )
 }

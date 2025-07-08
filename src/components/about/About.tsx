@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 export default function About() {
     const data = {
-        title: "Welcome To Our Moonlit Hotel & Resort",
+        title: "Welcome To Our Sanskrutam Guest House",
         subtitle: "About Us",
         description:
             "Welcome to Sanskrutam, a serene guest house nestled in the spiritual heart of Rishikesh. Designed for international and local travelers. Sanskrutam offers a peaceful retreat just 200 mtrs away from the Ganges and the vibrant energy of yoga, meditation, and ancient Indian culture.",

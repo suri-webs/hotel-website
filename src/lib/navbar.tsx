@@ -14,9 +14,8 @@ export const navbarData: NavbarItem[] = [
 
 export const mobliedata1 = [
   { name: "About Us", link: "/about" },
-  { name: "Menu", link: "/" },
+  { name: "Meals", link: "/meals" },
   { name: "Rooms", link: "/rooms" },
-  { name: "Meals", link: "/" },
   { name: "Information & Policy", link: "/" },
   { name: "Explore Rishikesh", link: "/gallery" },
   { name: "Feedback", link: "/" },
@@ -42,4 +41,14 @@ export const mobliedata = [
     info: "Mon - Sat 8:00 - 6:30, Sunday - CLOSED",
     link: "#",
   },
+];
+
+
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+
+export const socialLinks = [
+  { icon: <Instagram className="text-white" />, color: "#F02592" },
+  { icon: <Facebook className="text-white" />, color: "#1877F2" },
+  { icon: <Twitter className="text-white" />, color: "#1DA1F2" },
+  { icon: <Youtube className="text-white" />, color: "#FF0000" },
 ];

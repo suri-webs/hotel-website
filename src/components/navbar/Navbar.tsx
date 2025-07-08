@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AlignRight, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { mobliedata, mobliedata1, navbarData } from "@/lib/navbar";
+import { mobliedata, mobliedata1, navbarData, socialLinks } from "@/lib/navbar";
 import { roomOptions } from "@/lib/RoomsPage";
 export function Navbar() {
   const [click, setclick] = useState(false);
@@ -111,8 +111,8 @@ export function Navbar() {
 
         <AlignRight className="w-[38px] h-[38px] cursor-pointer text-white" onClick={() => setclick(true)} />
 
-        <div className={`fixed top-0 right-0 py-10 h-screen flex flex-col justify-around items-center bg-[#121212] z-[99] transition-transform duration-700 transform ${click ? "translate-x-0" : "translate-x-full"} w-[25%] max-md:w-[70%] max-2xl:w-[30%] max-lg:w-[45%] max-sm:w-full overflow-y-auto`}>
-          <X className="w-[40px] h-[38px] cursor-pointer text-white absolute right-8 top-8" onClick={() => setclick(false)} />
+        <div className={`fixed top-0 right-0 py-10 max-sm:py-16 h-screen flex flex-col justify-between gap-2 max-sm:gap-0 max-sm:justify-around items-center bg-[#121212] z-[99] transition-transform duration-700 transform ${click ? "translate-x-0" : "translate-x-full"} w-[25%] max-md:w-[70%] max-2xl:w-[30%] max-lg:w-[45%] max-sm:w-full overflow-y-auto`}>
+          <X className="w-[40px] h-[38px] cursor-pointer text-white absolute right-4 top-4" onClick={() => setclick(false)} />
           <div className="w-full flex flex-col pl-10  max-sm:gap-4 gap-5">
             {mobliedata1.map((item, index) => (
               <Link className="text-white border-[#121212] hover:border-white border-b-2 w-[60%] hover:w-[90%] transition-all duration-300 text-lg hover:text-[#F9A442]" key={index} href={item.link} onClick={() => setclick(false)}>
@@ -128,7 +128,7 @@ export function Navbar() {
               <Link key={index} href={item.link} className="flex items-start gap-4 text-white">
                 <div className="mt-1">{item.icon}</div>
                 <div>
-                  <p className="text-sm text-[#F9A442] font-medium">{item.label}</p>
+                  <p className="text-[15px] text-[#F9A442] font-medium">{item.label}</p>
                   {item.info.includes("\n") ? (
                     item.info.split("\n").map((line, i) => (
                       <p key={i} className="text-white text-base">{line}</p>
@@ -140,6 +140,16 @@ export function Navbar() {
               </Link>
             ))}
           </div>
+          <hr className="w-[90%]  h-[1px] border-white" />
+
+          <div className="flex gap-5 items-center mr-20 max-sm:mr-10 h-[70px] px-4 max-md:px-2">
+            {socialLinks.map((item, i) => (
+              <div key={i} className={`w-[40px] h-[40px] flex justify-center items-center rounded-full`} style={{ backgroundColor: item.color }}>
+                {item.icon}
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </nav >

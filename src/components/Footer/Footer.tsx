@@ -42,7 +42,6 @@ export default function Footer() {
         { name: "FAQ", href: "#" },
         { name: "Blog", href: "#" },
         { name: "Careers", href: "#" },
-        { name: "Testimonials", href: "#" },
         { name: "Support", href: "#" },
       ],
     },

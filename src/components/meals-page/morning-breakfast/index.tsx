@@ -67,7 +67,7 @@ export default function MorningBreakfast() {
             {(isMobile ? items.slice(0, visibleCount) : items).map((item, index) => (
               <div
                 key={index}
-                className="border border-amber-400 text-left text-lg sm:text-xl font-medium flex items-center gap-3 px-6 py-4 rounded-2xl hover:bg-[#FAA543] hover:text-white transition duration-300"
+                className=" text-left text-lg sm:text-xl font-medium flex items-center gap-3 px-6 py-4 rounded-2xl hover:bg-[#FAA543] hover:text-white transition duration-300"
               >
                 <span className="text-2xl">{item.emoji}</span>
                 <span>{item.name}</span>

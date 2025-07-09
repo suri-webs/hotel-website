@@ -39,7 +39,7 @@ export function Navbar() {
         <Image className="h-32 max-sm:h-26 w-auto max-sm:relative -left-2" src="/images/navbar-logo.png" alt="Logo" width={200} height={120} />
       </Link>
 
-      <ul className="gap-14 flex text-base text-[22px] font-serif text-white max-xl:hidden">
+      <ul className="gap-10 flex text-base text-[22px] font-serif text-white max-xl:hidden">
         {navbarData.map((item, index) => (
           <Link href={item.path} key={index} className="hover:text-[#F9A442] transition duration-200 cursor-pointer" >
             {item.name}

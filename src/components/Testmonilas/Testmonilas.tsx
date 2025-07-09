@@ -20,7 +20,7 @@ export default function Testimonials() {
     <section className="w-full relative h-fit p-6 max-sm:p-0 max-md:p-5 max-lg:p-10 flex flex-col justify-center items-center gap-15 bg-gray-50">
       <div className="text-center  space-y-4">
         <Heading text={"TESTIMONIALS"} />
-        <SubHeading text={"What Our Clients are Saying"} />
+        <SubHeading text={"What Our Guest are Saying"} />
       </div>
 
       <div className="w-[90%] max-sm:w-full max-sm:p-1 h-[380px] overflow-x-hidden">

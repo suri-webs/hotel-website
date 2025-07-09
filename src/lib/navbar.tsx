@@ -20,7 +20,7 @@ export const mobliedata1 = [
   { name: "Rooms", link: "/rooms" },
   { name: "Information & Policy", link: "/" },
   { name: "Explore Rishikesh", link: "/gallery" },
-  { name: "Feedback", link: "/" },
+  { name: "Feedback", link: "/feedback" },
   { name: "Contact Us", link: "/contact" },
 ];
 

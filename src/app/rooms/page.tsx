@@ -1,5 +1,5 @@
-import RoomsContainer from "@/components/RoomPage/rooms-container/RoomsContainer";
-import RoomsHeader from "@/components/RoomPage/rooms-header/RoomsHeader";
+import RoomsContainer from "@/components/room-page/rooms-container/RoomsContainer";
+import RoomsHeader from "@/components/room-page/rooms-header/RoomsHeader";
 
 export default function RoomsPage() {
     return (

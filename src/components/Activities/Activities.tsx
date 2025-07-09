@@ -9,7 +9,6 @@ export default function Activities() {
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Checking if screen is mobile size
   useEffect(() => {
     const checkScreen = () => {
       setIsMobile(window.innerWidth <= 768);

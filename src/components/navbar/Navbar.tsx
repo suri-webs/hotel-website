@@ -48,7 +48,7 @@ export function Navbar() {
       </ul>
 
       <div className="flex items-center max-sm:gap-3 gap-10">
-        <button className="cursor-pointer font-serif px-5 py-2 rounded-[5px] text-white bg-[#FAA543]" onClick={() => setclick1(true)}>
+        <button className="cursor-pointer font-serif max-sm:px-3 px-5 py-2 rounded-[5px] text-white bg-[#FAA543]" onClick={() => setclick1(true)}>
           Book Now
         </button>
 

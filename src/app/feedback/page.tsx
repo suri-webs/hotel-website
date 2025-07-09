@@ -1,3 +1,4 @@
+import FeedbackCta from "@/components/feedback-page/feedback-cta";
 import FeedbackForm from "@/components/feedback-page/form";
 import FeedbackHeader from "@/components/feedback-page/Header";
 import Testimonials from "@/components/Testmonilas/Testmonilas";
@@ -8,6 +9,7 @@ export default function Feedback() {
             <FeedbackHeader />
             <FeedbackForm />
             <Testimonials />
+            <FeedbackCta />
         </>
     )
 }

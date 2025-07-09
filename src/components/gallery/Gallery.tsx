@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ShieldX } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface ImageItem {
   img: string;
@@ -91,40 +91,34 @@ export default function Gallery() {
         ))}
       </ul>
 
-      <div className="flex flex-wrap gap-10 w-[90%] justify-center items-center mb-20">
+      <div className="flex flex-wrap gap-10 w-[90%] max-sm:w-full justify-center items-center mb-20">
         {currentImages.map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col w-96 h-55 relative max-sm:w-55 rounded-xl tracking-widest text-gray-700 justify-center items-center"
+            className="flex flex-col w-96 h-55 relative max-sm:w-[90%] rounded-xl tracking-widest text-gray-700 justify-center items-center"
           >
-            <Image
-              className="w-full h-full object-cover rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-300"
-              src={item.img}
-              alt="Gallery Image"
-              width={300}
-              height={300}
-              onClick={() => openImg(item.img)}
-            />
+            <Image className="w-full h-full object-cover rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-300"
+              src={item.img} alt="Gallery Image" width={300} height={300} onClick={() => openImg(item.img)} />
             {item.data && <span className="mt-2 text-sm text-gray-600">{item.data}</span>}
           </div>
         ))}
       </div>
 
       {selectedImage && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black/80 flex justify-center items-center z-50">
-          <div className="relative w-fit">
+        <div className="fixed inset-0 bg-black/80 z-50 flex justify-center items-center p-4">
+          <div className="relative w-full max-w-4xl max-h-[90vh] flex justify-center items-center">
             <Image
-              className="w-full max-w-[90vw] max-h-[80vh] rounded-lg object-contain"
               src={selectedImage}
               alt="Selected"
-              width={800}
-              height={600}
+              width={1000}
+              height={1000}
+              className="w-[500px] h-auto max-w-full max-h-full rounded-lg object-contain"
             />
             <button
               onClick={closeImg}
-              className="absolute -right-8 -top-5 bg-white/80 rounded-full p-1 shadow-lg hover:scale-110 transition"
+              className="absolute top-2 right-2 bg-white/80 rounded-full p-2 shadow-lg hover:scale-110 transition"
             >
-              <ShieldX className="text-red-500 w-6 h-6" />
+              <X className="text-red-500 w-6 h-6" />
             </button>
           </div>
         </div>

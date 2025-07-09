@@ -28,12 +28,12 @@ export default function Soups() {
       {/* Menu */}
       <div className="w-full flex justify-center items-center flex-col gap-10">
 
-        <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] px-10 py-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-4">
+        <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] max-sm:px-2 px-10 py-8">
+          <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
             {items.map((item, index) => (
               <div
                 key={index}
-                className="border border-amber-400 group text-left text-lg sm:text-xl font-medium flex items-center gap-3 px-6 py-4 rounded-2xl hover:bg-[#FAA543] hover:text-white transition duration-300"
+                className="border border-amber-400 group text-left text-lg sm:text-xl  font-medium flex items-center gap-3 px-6 py-4 rounded-2xl hover:bg-[#FAA543] hover:text-white transition duration-300"
               >
                 <span className="text-2xl">{item.emoji}</span>
                 <span>{item.name}</span>

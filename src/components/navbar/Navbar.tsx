@@ -48,12 +48,12 @@ export function Navbar() {
       </ul>
 
       <div className="flex items-center max-sm:gap-3 gap-10">
-        <button className="cursor-pointer font-serif px-5 py-2 rounded-[5px] text-white bg-[#ffa844f9]" onClick={() => setclick1(true)}>
+        <button className="cursor-pointer font-serif px-5 py-2 rounded-[5px] text-white bg-[#FAA543]" onClick={() => setclick1(true)}>
           Book Now
         </button>
 
         <div className={`fixed inset-0 z-[99] flex justify-center items-center transition-all duration-700 ${click1 ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
-          <div className="absolute inset-0 bg-[#00000050]" onClick={() => setclick1(false)}></div>
+          <div className="absolute inset-0 bg-[#000000b8]" onClick={() => setclick1(false)}></div>
           <div className="relative w-full max-w-[600px] px-4 sm:px-6 py-10 bg-white border rounded-lg shadow-lg z-[100]">
             <X className="w-6 h-6 text-black absolute top-1 right-1 cursor-pointer" onClick={() => setclick1(false)} />
             <div className="flex w-full flex-col gap-4 text-black text-sm font-sans">

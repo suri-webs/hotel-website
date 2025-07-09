@@ -62,8 +62,8 @@ export default function MorningBreakfast() {
           Traditional Indian
         </h2>
 
-        <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] px-10 py-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-4">
+        <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] max-sm:px-2 px-10 py-8">
+          <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
             {(isMobile ? items.slice(0, visibleCount) : items).map((item, index) => (
               <div
                 key={index}

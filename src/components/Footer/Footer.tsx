@@ -29,11 +29,11 @@ export default function Footer() {
     {
       name: "Quick Links",
       list: [
-        { name: "Home", href: "#" },
-        { name: "About", href: "#" },
-        { name: "Rooms", href: "#" },
-        { name: "Gallery", href: "#" },
-        { name: "Contact", href: "#" },
+        { name: "Home", href: "/" },
+        { name: "About", href: "/about" },
+        { name: "Rooms", href: "/rooms" },
+        { name: "Gallery", href: "/gallery" },
+        { name: "Contact", href: "/contact" },
       ],
     },
     {
@@ -49,7 +49,7 @@ export default function Footer() {
     {
       name: "Contact Us",
       list: [
-        { icon: MapPin, name: "Crown Hotels - Tapovan, Rishikesh" },
+        { icon: MapPin, name: "Guest House - Tapovan, Rishikesh" },
         { icon: Mail, name: "information@crownhotel.com" },
         { icon: Phone, name: "8800724168" },
       ],
@@ -85,13 +85,10 @@ export default function Footer() {
         {/* Logo & Description */}
         <div className="flex flex-col gap-6 w-full lg:w-[40%]">
           <h2 className="text-[20px] sm:text-[22px] font-playfair-display font-semibold ">
-            Crown Hotel
+            Jungle Retreat Tapovan
           </h2>
           <p className="text-[14px] sm:text-[16px] md:text-[18px] text-[#f2eeeeb8] leading-relaxed">
-            Founded in 1998, Crown Hotel is nestled in the serene hills of
-            Rishikesh, immersing you in the spiritual charm and natural beauty
-            of the Himalayas under the clear blue sky. Welcome to Crown Hotel,
-            Rishikesh.
+            Founded in 2025, Jungle Retreat Tapovan is nestled in the serene hills of Rishikesh, immersing you in the spiritual charm and natural beauty of the Himalayas under the clear blue sky. Welcome to Jungle Retreat Tapovan, Rishikesh.
           </p>
           <ul className="flex gap-3 mt-2">
             {icons.map((item, idx) => {
@@ -151,7 +148,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="w-[90%] mt-6 flex flex-row max-md:flex-col items-center max-md:gap-6 justify-between gap-4 text-sm text-white text-center max-md:text-center relative z-10">
         <p>
-          Copyright© 2025 Crown Hotels.com All Rights Reserved. Developed by
+          Copyright© 2025 Jungle Retreat Tapovan. All Rights Reserved. Developed by
           SkillsYard
         </p>
         <ul className="flex gap-4 flex-wrap justify-center max-md:justify-center">

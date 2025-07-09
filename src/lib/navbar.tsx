@@ -6,8 +6,8 @@ interface NavbarItem {
 }
 export const navbarData: NavbarItem[] = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
   { name: "Rooms", path: "/rooms" },
+  { name: "Meals", path: "/meals" },
   { name: "Gallery", path: "/gallery" },
   { name: "Contact Us", path: "/contact" },
 ];

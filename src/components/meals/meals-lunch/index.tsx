@@ -26,8 +26,8 @@ export default function MealsLunch() {
         <h2 className="text-3xl w-[40%] max-lg:w-[50%] max-sm:w-[90%] pb-2 border-[#FAA543] border-b-2 text-center">
           Complete Thali Experience
         </h2>
-        <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] px-10 py-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-4">
+        <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] max-sm:px-2 px-10 py-8">
+          <div className="grid  max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
             {items.map((item, index) => (
               <div
                 key={index}

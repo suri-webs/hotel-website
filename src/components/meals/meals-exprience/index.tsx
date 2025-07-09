@@ -1,7 +1,7 @@
 export default function CuisineCTA() {
   return (
     <section className="w-full flex justify-center items-center py-20 bg-white">
-      <div className="w-[90%] bg-white shadow-lg rounded-3xl text-center p-10 flex flex-col gap-6 items-center">
+      <div className="w-[90%] bg-white shadow-lg rounded-3xl text-center max-sm:p-2 p-10 flex flex-col gap-6 items-center">
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-[#1E1E2F]">
           Ready to Experience Our Cuisine?

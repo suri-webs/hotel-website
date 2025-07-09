@@ -1,6 +1,8 @@
-import AboutUser from "../../components/AboutUser/AboutUser";
-import ContactHeader from "../../components/ContactHeader/ContactHeader";
-import Location from "../../components/LocationCard/Location";
+import AboutUser from "@/components/contact-page/AboutUser/AboutUser";
+import ContactHeader from "@/components/contact-page/ContactHeader/ContactHeader";
+import Location from "@/components/contact-page/LocationCard/Location";
+
+
 
 export default function ContactPage() {
     return (

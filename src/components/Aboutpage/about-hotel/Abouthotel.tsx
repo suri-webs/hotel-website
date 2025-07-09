@@ -1,5 +1,5 @@
+import Button from "@/components/Button/Button";
 import Image from "next/image";
-import Button from "../Button/Button";
 
 export default function About() {
     const data = {

@@ -1,8 +1,9 @@
 import { Facebook, Instagram, PhoneCall, LucideIcon } from "lucide-react";
 import React from "react";
-import Heading from "../Heading/Heading";
-import SubHeading from "../SubHeading/SubHeading";
+
 import Image from "next/image";
+import Heading from "@/components/Heading/Heading";
+import SubHeading from "@/components/SubHeading/SubHeading";
 
 interface Team {
   img: string;

@@ -9,7 +9,9 @@ export const navbarData: NavbarItem[] = [
   { name: "Rooms", path: "/rooms" },
   { name: "Meals", path: "/meals" },
   { name: "Gallery", path: "/gallery" },
+  { name: "Service", path: "/service" },
   { name: "Contact Us", path: "/contact" },
+
 ];
 
 export const mobliedata1 = [

@@ -1,34 +1,34 @@
-import { BedDouble, Armchair, HandPlatter, LucideIcon } from "lucide-react";
+import { Wifi, Snowflake, Tv, Droplet, Utensils, Mountain, LucideIcon, } from "lucide-react";
 
 export const serviceData: { icon: LucideIcon; heading: string; para: string }[] = [
-    {
-      icon: BedDouble,
-      heading: "Comfort Beds",
-      para: "Sink into plush bedding designed for restorative sleep and peaceful dreams.",
-    },
-    {
-      icon: HandPlatter,
-      heading: "Exquisite Dining",
-      para: "Delight your palate with gourmet cuisine crafted from the finest ingredients.",
-    },
-    {
-      icon: Armchair,
-      heading: "Unforgettable Events",
-      para: "Celebrate life's moments in stunning spaces tailored for lasting memories.",
-    },
-    {
-      icon: BedDouble,
-      heading: "Comfort Beds",
-      para: "Sink into plush bedding designed for restorative sleep and peaceful dreams.",
-    },
-    {
-      icon: HandPlatter,
-      heading: "Exquisite Dining",
-      para: "Delight your palate with gourmet cuisine crafted from the finest ingredients.",
-    },
-    {
-      icon: Armchair,
-      heading: "Unforgettable Events",
-      para: "Celebrate life's moments in stunning spaces tailored for lasting memories.",
-    },
-  ];
+  {
+    icon: Wifi,
+    heading: "High-Speed Internet",
+    para: "Stay connected with fast and reliable Wi-Fi throughout the property.",
+  },
+  {
+    icon: Snowflake,
+    heading: "Climate Control",
+    para: "Enjoy personalized comfort with air conditioning and heating in every room.",
+  },
+  {
+    icon: Tv,
+    heading: "Entertainment Hub",
+    para: "Unwind with premium TV channels and on-demand streaming options.",
+  },
+  {
+    icon: Droplet,
+    heading: "Modern Bathrooms",
+    para: "Refresh in style with sleek, clean, and well-equipped private bathrooms.",
+  },
+  {
+    icon: Utensils,
+    heading: "Multi-Cuisine Restaurant",
+    para: "Savor a variety of international flavors from our in-house chefs.",
+  },
+  {
+    icon: Mountain,
+    heading: "Scenic Views",
+    para: "Wake up to breathtaking landscapes and serene surroundings.",
+  },
+];

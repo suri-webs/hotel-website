@@ -14,7 +14,7 @@ export default function Home() {
     <>
     <div className="overflow-x-hidden">
       <Header />
-      <About />
+      <About/>
       <Services />
       <Rooms />
       <Video />

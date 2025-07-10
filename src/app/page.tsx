@@ -1,12 +1,11 @@
 import About from "@/components/about/About";
-import Activities from "@/components/Activities/Activities";
+import Activities from "@/components/activities/Activities";
 import { ContactUs } from "@/components/contactus/Contact";
 import Header from "@/components/header/Header";
 import Rooms from "@/components/rooms/Rooms";
 import Services from "@/components/Services/Services";
 import Testmonilas from "@/components/Testmonilas/Testmonilas";
 import Video from "@/components/Vedio/Vedio";
-
 
 
 export default function Home() {

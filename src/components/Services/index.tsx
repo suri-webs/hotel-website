@@ -1,8 +1,8 @@
 "use client";
 import { serviceData } from "@/lib/Services";
 import { useState, useEffect } from "react";
-import Heading from "../Heading/Heading";
-import SubHeading from "../SubHeading/SubHeading";
+import Heading from "../Heading";
+import SubHeading from "../SubHeading";
 
 export default function Services() {
   const [showAll, setShowAll] = useState(false);

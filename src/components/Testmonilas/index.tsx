@@ -8,8 +8,8 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Heading from "../Heading/Heading";
-import SubHeading from "../SubHeading/SubHeading";
+import Heading from "../Heading";
+import SubHeading from "../SubHeading";
 import { ChevronLeft, ChevronRight, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
 

@@ -1,8 +1,8 @@
 "use client"
 import { useState, useEffect } from "react";
 import { ActivitiesData } from "@/lib/Activities";
-import Heading from "../Heading/Heading";
-import SubHeading from "../SubHeading/SubHeading";
+import Heading from "../Heading";
+import SubHeading from "../SubHeading";
 import Image from "next/image";
 
 export default function Activities() {

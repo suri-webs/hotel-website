@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
-import SubHeading from "../SubHeading/SubHeading";
-import Heading from "../Heading/Heading";
+import SubHeading from "../SubHeading";
+import Heading from "../Heading";
 import Image from "next/image";
 
 export default function Rooms() {

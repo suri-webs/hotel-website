@@ -1,5 +1,5 @@
-import AboutUser from "@/components/contact-page/AboutUser/AboutUser";
-import ContactHeader from "@/components/contact-page/ContactHeader/ContactHeader";
+import AboutUser from "@/components/contact-page/AboutUser";
+import ContactHeader from "@/components/contact-page/ContactHeader";
 import Location from "@/components/contact-page/LocationCard/Location";
 
 

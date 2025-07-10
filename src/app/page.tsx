@@ -1,5 +1,5 @@
 import About from "@/components/about/About";
-import Activities from "@/components/activities/Activities";
+import Activities from "@/components/Activities/Activities";
 import { ContactUs } from "@/components/contactus/Contact";
 import Header from "@/components/header/Header";
 import Rooms from "@/components/rooms/Rooms";

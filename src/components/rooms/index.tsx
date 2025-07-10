@@ -25,7 +25,7 @@ export default function Rooms() {
             <div className="w-full h-auto flex flex-col justify-center gap-10 items-center p-5 max-sm:gap-5">
                 <div className="flex flex-col mb-5 items-center gap-5 max-sm:gap-6">
                     <Heading text={"RISHIKESH LUXURY ROOMS"} />
-                    <SubHeading text={"Luxury Rooms & Suites"} />
+                    <SubHeading text={"Luxury Geust Rooms"} />
 
                 </div>
                 <div className="w-[89%] flex  justify-center items-center gap-10 max-sm:gap-5 max-lg:flex-col">

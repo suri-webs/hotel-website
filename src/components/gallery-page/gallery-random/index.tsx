@@ -1,20 +1,7 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-
-const guestData = [
-    { name: 'Arul Residential Stay', image: '/gallery/gallery-3.jpg' },
-    { name: 'Nordhausen Residential Stay', image: '/gallery/gallery-4.jpg' },
-    { name: 'Neeraja Guest House', image: '/gallery/gallery-5.jpg' },
-    { name: 'La Salle De Vie Residential Stay', image: '/gallery/gallery-6.jpg' },
-    { name: 'Utility Residential Stay', image: '/gallery/gallery-7.jpg' },
-    { name: 'Gaurdava Guest House', image: '/gallery/gallery-8.jpg' },
-    { name: 'Serendipity Guest House', image: '/gallery/gallery-9.jpg' },
-    { name: 'New Creation Guest House', image: '/gallery/gallery-10.jpg' },
-    { name: 'Vetri Kyoda Residential Stay', image: '/gallery/gallery-11.jpg' },
-];
-
+import { guestData } from '@/lib/gallery';
 export default function RandomPickGrid() {
     const [visibleCount, setVisibleCount] = useState(guestData.length);
     const [isMobile, setIsMobile] = useState(false);

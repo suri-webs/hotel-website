@@ -1,16 +1,7 @@
 'use client';
-
+import { discoverImages } from '@/lib/gallery';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const discoverImages = [
-    { src: '/gallery/gallery-3.jpg', alt: 'Farming' },
-    { src: '/gallery/gallery-8.jpg', alt: 'Massage Therapy' },
-    { src: '/gallery/gallery-6.jpg', alt: 'Classroom' },
-    { src: '/gallery/gallery-13.jpg', alt: 'Art & Dance' },
-    { src: '/gallery/gallery-12.jpg', alt: 'Matrimandir Morning' },
-];
-
 export default function DiscoverAuroville() {
     return (
         <section className="bg-[#fff6ec] py-14 px-4">

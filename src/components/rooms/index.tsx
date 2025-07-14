@@ -11,41 +11,34 @@ export default function Rooms() {
         images: string;
         text: string;
     }
+
     const divdata: Room[] = [
-        { images: "/rooms-images/image-3.jpg", text: "Junior Suite", },
-        { images: "/rooms-images/image-4.jpg", text: "Family Rooms", },
+        { images: "/rooms-images/image-3.jpg", text: "Junior Suite" },
+        { images: "/rooms-images/image-4.jpg", text: "Family Rooms" },
     ];
     const divdata2: Room[] = [
-        { images: "/rooms-images/iamge-1.jpg", text: "Executive Room", },
-        { images: "/rooms-images/image-6.jpg", text: "Presidential Suite", },
-        { images: "/rooms-images/image-8.jpg", text: "Luxury Suite", },
+        { images: "/rooms-images/iamge-1.jpg", text: "Executive Room" },
+        { images: "/rooms-images/image-6.jpg", text: "Presidential Suite" },
+        { images: "/rooms-images/image-8.jpg", text: "Luxury Suite" },
     ];
+
     const [showMore, setShowMore] = useState(false);
     const [click1, setclick1] = useState(false);
     const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
-    const [visibleCards, setVisibleCards] = useState(Rooms.length);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+
     useEffect(() => {
         const checkScreenSize = () => {
             setIsSmallScreen(window.innerWidth <= 768);
         };
-
         checkScreenSize();
         window.addEventListener("resize", checkScreenSize);
         return () => window.removeEventListener("resize", checkScreenSize);
     }, []);
 
     useEffect(() => {
-        if (isSmallScreen) {
-            setVisibleCards(4);
-        } else {
-            setVisibleCards(Rooms.length);
-        }
-    }, [isSmallScreen]);
-
-    useEffect(() => {
-        const isSmallScreen = window.innerWidth <= 1300;
-        document.body.style.overflow = isSmallScreen || click1 ? "hidden" : "auto";
+        const isSmall = window.innerWidth <= 1300;
+        document.body.style.overflow = isSmall || click1 ? "hidden" : "auto";
     }, [click1]);
 
     const updateRoom = (index: number, type: "adults" | "children", delta: number) => {
@@ -65,6 +58,8 @@ export default function Rooms() {
     const removeRoom = (index: number) => {
         setRooms(prev => prev.filter((_, i) => i !== index));
     };
+
+
     return (
         <section className="w-full h-screen  max-lg:h-full playfair-display my-[40px] flex justify-center items-center bg-[#fff]">
             <div className="w-full h-auto flex flex-col justify-center gap-10 items-center p-5 max-sm:gap-5">

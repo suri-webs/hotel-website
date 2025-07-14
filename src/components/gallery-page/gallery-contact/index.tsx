@@ -27,7 +27,7 @@ export default function GalleryContact() {
             <h2 className="text-3xl max-sm:text-2xl font-semibold mb-4 tracking-wide">RESIDENTIAL STAYS</h2>
             <p className="text-gray-700 mb-6 text-xl leading-relaxed max-sm:text-lg">
               There are a wide range of Residential Stay options available in Auroville and through
-              your stay, you'll have a real experience living & sharing with members of Auroville
+              your stay, you &apos; ll have a real experience living & sharing with members of Auroville
               and their family.
             </p>
             <button className="bg-[#f9a825] hover:bg-[#f57f17] text-white px-5 py-2 text-sm font-medium rounded">

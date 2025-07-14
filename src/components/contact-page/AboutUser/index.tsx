@@ -5,7 +5,8 @@ export default function AboutUser() {
                 <span className="text-[38px] max-lg:text-2xl max-lg:w-[300px] text-[#222222cd] playfair-display w-[550px] max-md:text-3xl max-sm:w-[85%] max-sm:text-[20px] max-sm:text-center">Love to hear from you! Get in touch with us today</span>
                 <input type="text" placeholder="Your Name" className="w-full pl-[20px] bg-white border-2 h-[55px] rounded-[10px] border-[#2222] max-sm:w-[85%]"/>
                 <input type="text" placeholder="Your Email" className="w-full pl-[20px] bg-white border-2 h-[55px] rounded-[10px] border-[#2222]  max-sm:w-[85%]" />
-                <textarea name="" id="" placeholder="Enter Your Message" className="w-full bg-white h-[150px] p-[20px] border-2 border-[#2222] rounded-[10px]  max-sm:w-[85%]"></textarea>
+                <input type="tel" placeholder="Your Mobile No" className="w-full pl-[20px] bg-white border-2 h-[55px] rounded-[10px] border-[#2222]  max-sm:w-[85%]" />
+                <textarea name="" id="" placeholder="Enter Your Message" className="w-full bg-white h-[100px] p-[20px] border-2 border-[#2222] rounded-[10px]  max-sm:w-[85%]"></textarea>
                 <button type="submit" className="w-full  bg-gradient-to-r from-blue-500 to-teal-400 hover:scale-103 transition-all ease-in duration-200   hover:shadow-[0_0_20px_rgba(13,148,136,0.5)] h-[50px] text-[17px] rounded-[10px] text-white  max-sm:w-[85%]" >Send Message</button>
             </div>
             <div className="w-[45%] h-[90%] max-lg:w-[40%] max-lg:h-[70%]  max-md:h-[95%] rounded-2xl overflow-hidden flex justify-center items-center max-sm:w-[90%] max-sm:h-full  ">

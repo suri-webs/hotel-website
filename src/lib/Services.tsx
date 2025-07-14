@@ -1,34 +1,34 @@
-import { Wifi, Snowflake, Tv, Droplet, Utensils, Mountain, LucideIcon, } from "lucide-react";
+import { Wifi, Snowflake, Utensils, Droplet, Mountain, Tv, LucideIcon } from "lucide-react";
 
 export const serviceData: { icon: LucideIcon; heading: string; para: string }[] = [
   {
-    icon: Wifi,
-    heading: "High-Speed Internet",
-    para: "Stay connected with fast and reliable Wi-Fi throughout the property.",
-  },
-  {
     icon: Snowflake,
-    heading: "Climate Control",
-    para: "Enjoy personalized comfort with air conditioning and heating in every room.",
+    heading: "AC Rooms",
+    para: "All rooms are equipped with air conditioning for your comfort.",
   },
   {
-    icon: Tv,
-    heading: "Entertainment Hub",
-    para: "Unwind with premium TV channels and on-demand streaming options.",
-  },
-  {
-    icon: Droplet,
-    heading: "Modern Bathrooms",
-    para: "Refresh in style with sleek, clean, and well-equipped private bathrooms.",
+    icon: Wifi,
+    heading: "Free Wi-Fi",
+    para: "Enjoy seamless internet access throughout the property at no extra cost.",
   },
   {
     icon: Utensils,
-    heading: "Multi-Cuisine Restaurant",
-    para: "Savor a variety of international flavors from our in-house chefs.",
+    heading: "In-House Kitchen",
+    para: "Home-cooked vegetarian meals available with 10% off when pre-booked.",
+  },
+  {
+    icon: Droplet,
+    heading: "Filtered Drinking Water",
+    para: "Stay hydrated with unlimited access to free filtered drinking water.",
+  },
+  {
+    icon: Tv,
+    heading: "Work-Friendly Stay",
+    para: "Each room includes a desk/table suitable for laptop use and remote work.",
   },
   {
     icon: Mountain,
-    heading: "Scenic Views",
-    para: "Wake up to breathtaking landscapes and serene surroundings.",
+    heading: "Yoga & Adventure",
+    para: "Assistance with yoga sessions and activities like river rafting nearby.",
   },
 ];

@@ -29,10 +29,10 @@ export const ActivitiesData: Activities[] = [
       "Explore breathtaking trails and enjoy panoramic views on adventurous treks through nature.",
   },
   {
-    img: "/images/zipline.jpg",
-    heading: "Zip Lining",
+    img: "/images/explore-loga.avif",
+    heading: "Yoga & Spirituality",
     about:
-      "Soar across the landscape on a zipline for a high-speed adventure with a bird's-eye view.",
+      "Join daily yoga, meditation, and sound healing sessions nearby",
   },
   {
     img: "/images/temple.jpg",
@@ -47,9 +47,9 @@ export const ActivitiesData: Activities[] = [
       "A peaceful waterfall spot perfect for a refreshing dip and nature walk.",
   },
   {
-    img: "/images/paragliding1.jpg",
-    heading: "Paragliding",
+    img: "/images/market-nrishi.webp",
+    heading: "Local Culture & Markets",
     about:
-      "Soar above the hills and rivers for a breathtaking aerial view of Rishikesh.",
+      "Explore Tapovan Market for handmade crafts, organic cafés, books, and yoga gear",
   },
 ];

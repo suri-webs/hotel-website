@@ -63,9 +63,8 @@ export default function Footer() {
   ];
 
   const copyRight = [
-    { name: "PRIVACY" },
-    { name: "TERMS OF USE" },
-    { name: "POLICY" },
+    { name: "Privacy Policy", path: "/privacy" },
+    { name: "Terms of Use", path : "/feedback" },
   ];
 
   return (
@@ -152,9 +151,9 @@ export default function Footer() {
         </p>
         <ul className="flex gap-4 flex-wrap justify-center max-md:justify-center">
           {copyRight.map((data, idx) => (
-            <li key={idx} className="hover:underline cursor-pointer">
+            <Link href={data.path} key={idx} className="hover:underline cursor-pointer">
               {data.name}
-            </li>
+            </Link>
           ))}
         </ul>
       </div>

@@ -1,10 +1,34 @@
+'use client'
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
 export default function MealsLunch() {
   const items = [
-    { name: "Steamed Rice with Dal", emoji: "🍛" },
-    { name: "Boondi Raita", emoji: "🥣" },
-    { name: "Chapati", emoji: "🫓" },
-    { name: "Fresh Salad", emoji: "🥗" },
+    { name: "Steamed Rice with Dal", image: "/meals/Steamed-Rice-with-Dal.jpeg" },
+    { name: "Boondi Raita", image: "/meals/Boondi-Raita.jpeg" },
+    { name: "Chapati", image: "/meals/Chapati.jpeg" },
+    { name: "Fresh Salad", image: "/meals/Fresh-Salad.jpeg" },
   ];
+
+  const [visibleCount, setVisibleCount] = useState(4);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const canShowMore = visibleCount < items.length;
+
+  const handleToggle = () => {
+    setVisibleCount(prev => (canShowMore ? prev + 4 : 4));
+  };
 
   return (
     <section className="w-full py-20 flex flex-col gap-14 justify-center items-center">
@@ -27,18 +51,34 @@ export default function MealsLunch() {
           Complete Thali Experience
         </h2>
         <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] max-sm:px-2 px-10 py-8">
-          <div className="grid  max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
-            {items.map((item, index) => (
+          <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
+            {(isMobile ? items.slice(0, visibleCount) : items).map((item, index) => (
               <div
                 key={index}
-                className="border border-amber-400 group text-left text-lg sm:text-xl font-medium flex items-center gap-3 px-6 py-4 rounded-2xl hover:bg-[#FAA543] hover:text-white transition duration-300"
+                className="border border-[#a2a2a23f] shadow-md text-left text-lg sm:text-xl font-medium max-sm:px-2 flex items-center gap-4 px-6 py-4 rounded-2xl transition duration-500"
               >
-                <span className="text-2xl">{item.emoji}</span>
+                <div className="w-20 h-20 relative rounded-sm overflow-hidden shadow-md">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <span>{item.name}</span>
               </div>
             ))}
           </div>
         </div>
+
+        {isMobile && (
+          <button
+            onClick={handleToggle}
+            className="bg-[#FAA543] text-white px-6 py-2 rounded-lg text-lg font-medium transition hover:bg-[#e9941e]"
+          >
+            {canShowMore ? "Show More" : "Show Less"}
+          </button>
+        )}
       </div>
     </section>
   );

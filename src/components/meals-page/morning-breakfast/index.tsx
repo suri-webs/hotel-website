@@ -1,25 +1,74 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function MorningBreakfast() {
   const items = [
-    { name: "Aloo Parantha", emoji: "🥔" },
-    { name: "Gobhi Parantha", emoji: "🥬" },
-    { name: "Paneer Parantha", emoji: "🧀" },
-    { name: "Poha", emoji: "🍛" },
-    { name: "Upma", emoji: "🥣" },
-    { name: "Idli Sambhar", emoji: "🍲" },
-    { name: "Veg Sandwich", emoji: "🥪" },
-    { name: "Butter Toast", emoji: "🍞" },
-    { name: "Besan Chilla", emoji: "🫓" },
-    { name: "Plain Pancake", emoji: "🥞" },
-    { name: "Honey Pancake", emoji: "🍯" },
-    { name: "Banana Pancake", emoji: "🍌" },
-    { name: "Nutella Banana Pancake", emoji: "🍫" },
-    { name: "Fruit Cut with Muesli", emoji: "🍓" },
-    { name: "Fruit Salad", emoji: "🍇" },
-    { name: "Cornflakes with Milk", emoji: "🥣" },
+    {
+      name: "Aloo Parantha",
+      image: "/meals/aalo-Paratha.jpeg",
+    },
+    {
+      name: "Gobhi Parantha",
+      image: "/meals/Gobi-Paratha.jpg",
+    },
+    {
+      name: "Paneer Parantha",
+      image: "/meals/paneer-paratha.jpg",
+    },
+    {
+      name: "Poha",
+      image: "/meals/poha.webp",
+    },
+    {
+      name: "Upma",
+      image: "/meals/upma.jpeg",
+    },
+    {
+      name: "Idli Sambhar",
+      image: "/meals/idlisambar.jpeg",
+    },
+    {
+      name: "Veg Sandwich",
+      image: "/meals/veg-sandwich.jpeg",
+    },
+    {
+      name: "Butter Toast",
+      image: "/meals/buttor-tost.jpg",
+    },
+    {
+      name: "Besan Chilla",
+      image: "/meals/besan-chilla.jpg",
+    },
+    {
+      name: "Plain Pancake",
+      image: "/meals/plainpancake.jpg",
+    },
+    {
+      name: "Honey Pancake",
+      image: "/meals/honey-pancakes.webp",
+    },
+    {
+      name: "Banana Pancake",
+      image: "/meals/banana_pancakes.jpg",
+    },
+    {
+      name: "Nutella Banana Pancake",
+      image: "/meals/Nutella-Banana.jpeg",
+    },
+    {
+      name: "Fruit Cut with Muesli",
+      image: "/meals/fruitcut.jpeg",
+    },
+    {
+      name: "Fruit Salad",
+      image: "/meals/Fruit-Salad.jpeg",
+    },
+    {
+      name: "Cornflakes with Milk",
+      image: "/meals/Cornflakes.jpeg",
+    },
   ];
 
   const [visibleCount, setVisibleCount] = useState(4);
@@ -58,19 +107,28 @@ export default function MorningBreakfast() {
 
       {/* Grid Container */}
       <div className="w-full flex justify-center items-center flex-col gap-10">
-        <h2 className="text-3xl w-[40%] max-lg:w-[90%] max-sm:w-[90%] pb-2 border-[#FAA543] border-b-2 text-center">
+        <h2 className="text-3xl w-[40%] max-lg:w-[90%] max-sm:w-[90%] pb-2  border-[#FAA543] border-b-2 text-center">
           Traditional Indian
         </h2>
 
         <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] max-sm:px-2 px-10 py-8">
-          <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
+          <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-6">
             {(isMobile ? items.slice(0, visibleCount) : items).map((item, index) => (
               <div
                 key={index}
-                className=" text-left text-lg sm:text-xl font-medium flex items-center gap-3 px-6 py-4 rounded-2xl hover:bg-[#FAA543] hover:text-white transition duration-300"
+                className="text-left text-lg sm:text-xl border shadow-md font-medium flex items-center max-sm:px-2 gap-4 px-6 py-4 rounded-2xl border-[#a2a2a23f]  transition duration-500"
               >
-                <span className="text-2xl">{item.emoji}</span>
-                <span>{item.name}</span>
+                <div className="w-20 h-20 relative rounded-sm overflow-hidden shadow-md">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span>{item.name}</span>
+                </div>
               </div>
             ))}
           </div>

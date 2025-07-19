@@ -5,12 +5,12 @@ interface NavbarItem {
   path: string;
 }
 export const navbarData: NavbarItem[] = [
-  { name: "Home", path: "/" },
+  // { name: "Home", path: "/" },
   { name: "Rooms", path: "/rooms" },
   { name: "Meals", path: "/meals" },
-  { name: "Gallery", path: "/gallery" },
+  { name: "Explore Rishikesh", path: "/gallery" },
   { name: "Service", path: "/service" },
-  { name: "Contact Us", path: "/contact" },
+  { name: "Feedback", path: "/feedback" },
 
 ];
 

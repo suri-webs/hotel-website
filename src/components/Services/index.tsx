@@ -23,7 +23,7 @@ export default function Services() {
   return (
     <section className="h-screen max-lg:h-full w-full  flex flex-col justify-center py-[30px] max-sm:px-1 gap-[50px] items-center  relative px-4 ">
         <div className="text-center space-y-4">
-             <Heading text={"OUR SERVICES"} />
+             <Heading text={"OUR AMENITIES"} />
              <SubHeading text={"Timeless Elegance & Morden Comforts"} />
            </div>
 

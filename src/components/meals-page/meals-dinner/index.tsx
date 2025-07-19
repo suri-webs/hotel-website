@@ -1,11 +1,35 @@
+'use client'
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
 export default function MealsDinner() {
   const items = [
-    { name: "Seasonal Vegetable", emoji: "🥬" },
-    { name: "Dal Soup", emoji: "🍲" },
-    { name: "Chapati", emoji: "🫓" },
-    { name: "Steamed Rice", emoji: "🍚" },
-    { name: "Tadka Salad", emoji: "🥗" },
+    { name: "Seasonal Vegetable", image: "/meals/Seasonal-Vegetable.jpeg" },
+    { name: "Dal Soup", image: "/meals/Dal-Soup.jpeg" },
+    { name: "Chapati", image: "/meals/Chapati.jpeg" },
+    { name: "Steamed Rice", image: "/meals/Steamed-Rice.jpeg" },
+    { name: "Tadka Salad", image: "/meals/Tadka-Salad.jpeg" },
   ];
+
+  const [visibleCount, setVisibleCount] = useState(4);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const canShowMore = visibleCount < items.length;
+
+  const handleToggle = () => {
+    setVisibleCount(prev => (canShowMore ? prev + 4 : 4));
+  };
 
   return (
     <section className="w-full py-20 flex flex-col items-center justify-center gap-14 bg-[#f9f9f9]">
@@ -24,15 +48,34 @@ export default function MealsDinner() {
 
       {/* Menu Card */}
       <div className="bg-white rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[90%] max-sm:px-2 px-10 py-8">
-        <div className="grid  max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
-          {items.map((item, index) => (
-            <div key={index}className="border border-amber-400 group text-left text-lg sm:text-xl font-medium flex items-center gap-3 px-6 py-4 rounded-2xl hover:bg-[#FAA543] hover:text-white transition duration-300">
-              <span className="text-2xl">{item.emoji}</span>
+        <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-x-10 gap-y-4">
+          {(isMobile ? items.slice(0, visibleCount) : items).map((item, index) => (
+            <div
+              key={index}
+              className="border border-[#a2a2a23f] shadow-md text-left text-lg sm:text-xl font-medium flex items-center max-sm:px-2 gap-4 px-6 py-4 rounded-2xl transition duration-500"
+            >
+              <div className="w-20 h-20 relative rounded-sm overflow-hidden shadow-md">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <span>{item.name}</span>
             </div>
           ))}
         </div>
       </div>
+
+      {isMobile && (
+        <button
+          onClick={handleToggle}
+          className="bg-[#FAA543] text-white px-6 py-2 rounded-lg text-lg font-medium transition hover:bg-[#e9941e]"
+        >
+          {canShowMore ? "Show More" : "Show Less"}
+        </button>
+      )}
     </section>
   );
 }

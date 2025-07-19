@@ -5,7 +5,7 @@ export default function PrivacyContainer() {
     <div className="max-w-7xl mx-auto px-4 py-10 space-y-10">
       <section className="space-y-4">
         <h2 className="text-3xl max-sm:text-2xl font-bold text-gray-800">
-          Security Deposit Policy – Jungle Retreat Tapovan 🔐
+          Security Deposit Policy - Jungle Retreat Tapovan 🔐
         </h2>
         <p className="text-gray-700 text-lg max-sm:text-sm">
           To ensure a safe and respectful environment for all guests, we may collect a refundable security deposit at the time of check-in.
